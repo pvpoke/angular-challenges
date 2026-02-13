@@ -3,23 +3,14 @@ import { FakeHttpService } from '../../data-access/fake-http.service';
 import { TeacherStore } from '../../data-access/teacher.store';
 import { CardType } from '../../model/card.model';
 import { CardComponent } from '../../ui/card/card.component';
+import { ListItemComponent } from '../../ui/list-item/list-item.component';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-teacher-card',
-  template: `
-    <app-card
-      [list]="teachers()"
-      [type]="cardType"
-      customClass="bg-light-red"></app-card>
-  `,
-  styles: [
-    `
-      ::ng-deep .bg-light-red {
-        background-color: rgba(250, 0, 0, 0.1);
-      }
-    `,
-  ],
-  imports: [CardComponent],
+  templateUrl: './teacher-card.component.html',
+  styleUrls: ['./teacher-card.component.scss'],
+  imports: [CardComponent, ListItemComponent, NgOptimizedImage],
 })
 export class TeacherCardComponent implements OnInit {
   private http = inject(FakeHttpService);
