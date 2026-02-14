@@ -15,8 +15,9 @@ import { NgOptimizedImage } from '@angular/common';
   selector: 'app-student-card',
   templateUrl: 'student-card.component.html',
   styleUrls: ['student-card.component.scss'],
-  imports: [CardComponent, ListItemComponent, NgOptimizedImage],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CardComponent, ListItemComponent, NgOptimizedImage]
 })
 export class StudentCardComponent implements OnInit {
   private http = inject(FakeHttpService);

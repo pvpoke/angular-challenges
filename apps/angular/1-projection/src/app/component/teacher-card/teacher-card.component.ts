@@ -10,7 +10,8 @@ import { NgOptimizedImage } from '@angular/common';
   selector: 'app-teacher-card',
   templateUrl: './teacher-card.component.html',
   styleUrls: ['./teacher-card.component.scss'],
-  imports: [CardComponent, ListItemComponent, NgOptimizedImage],
+  standalone: true,
+  imports: [CardComponent, ListItemComponent, NgOptimizedImage]
 })
 export class TeacherCardComponent implements OnInit {
   private http = inject(FakeHttpService);
